@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewsInfo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bIM-iZ-H54">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="200" id="fYP-cd-99n" customClass="ApiTableViewCell" customModule="NewsInfo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fYP-cd-99n" id="kt6-QN-C8B">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xhG-nA-H5a">
+                                                    <rect key="frame" x="29" y="37" width="108" height="110"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="108" id="Mmm-2l-bUK"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNt-Ju-ST2">
+                                                    <rect key="frame" x="154" y="37" width="157" height="110"/>
+                                                    <color key="tintColor" systemColor="tintColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BXt-hO-3ay">
+                                                    <rect key="frame" x="318" y="72" width="45" height="38"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="2Gs-gT-kej"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="btnActionInLike:" destination="fYP-cd-99n" eventType="touchUpInside" id="Zqh-DI-Jfj"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="BXt-hO-3ay" secondAttribute="bottom" constant="79" id="9At-IY-KOI"/>
+                                                <constraint firstItem="xhG-nA-H5a" firstAttribute="leading" secondItem="kt6-QN-C8B" secondAttribute="leadingMargin" constant="9" id="ARM-y8-fUJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BXt-hO-3ay" secondAttribute="trailing" constant="10" id="Bdg-9S-k4z"/>
+                                                <constraint firstItem="DNt-Ju-ST2" firstAttribute="leading" secondItem="xhG-nA-H5a" secondAttribute="trailing" constant="17" id="NyF-8e-FdX"/>
+                                                <constraint firstItem="BXt-hO-3ay" firstAttribute="leading" secondItem="DNt-Ju-ST2" secondAttribute="trailing" constant="7" id="dNn-8D-ap5"/>
+                                                <constraint firstItem="BXt-hO-3ay" firstAttribute="top" secondItem="kt6-QN-C8B" secondAttribute="topMargin" constant="61" id="kLv-cZ-RUf"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="xhG-nA-H5a" secondAttribute="bottom" constant="42" id="q9o-Bg-87E"/>
+                                                <constraint firstItem="xhG-nA-H5a" firstAttribute="top" secondItem="DNt-Ju-ST2" secondAttribute="top" id="r27-LB-Tto"/>
+                                                <constraint firstItem="xhG-nA-H5a" firstAttribute="bottom" secondItem="DNt-Ju-ST2" secondAttribute="bottom" id="vRp-2i-tt3"/>
+                                                <constraint firstItem="xhG-nA-H5a" firstAttribute="top" secondItem="kt6-QN-C8B" secondAttribute="topMargin" constant="26" id="ved-VY-MG6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnLike" destination="BXt-hO-3ay" id="eW9-5e-EGt"/>
+                                            <outlet property="lblTittle" destination="DNt-Ju-ST2" id="qtf-Zj-2LC"/>
+                                            <outlet property="userImage" destination="xhG-nA-H5a" id="608-CH-zmG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="nbe-bv-izi"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fuU-ff-21j"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bIM-iZ-H54" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bzc-hp-luW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bIM-iZ-H54" secondAttribute="bottom" id="itv-ov-ZCf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bIM-iZ-H54" secondAttribute="trailing" id="mTt-NI-DPw"/>
+                            <constraint firstItem="bIM-iZ-H54" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pt2-zf-P6k"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableViewInfo" destination="bIM-iZ-H54" id="lmL-3t-yY9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-54.198473282442748" y="4.9295774647887329"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
